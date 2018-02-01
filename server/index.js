@@ -6,13 +6,17 @@ const GoogleStrategy = require('passport-google-oauth20').Startegy;
 
 const app = express();
 
-// Index Rote
+// Index Route
 app.get('/', (req, res) => {
 	const title = 'Welcome';
 	res.render('index', {
 		title: title
 	});
 });
+
+// Sign-in route
+
+// 
 
 //passport.use(new GoogleStrategy());
 
