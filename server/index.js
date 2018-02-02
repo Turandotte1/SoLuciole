@@ -1,24 +1,20 @@
-//e6 syntax 
+//j'utiliserai e6 syntax avec arrow functions :) 
 
 const express = require('express');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Startegy;
+const mongoose = require('mongoose');
+const keys = require('./config/keys');
+require('./services/passport');
+
+mongoose.connect(keys.mongoURI);
 
 const app = express();
 
+require('./routes/authRoutes')(app);
+
 // Index Route
 app.get('/', (req, res) => {
-	const title = 'Welcome';
-	res.render('index', {
-		title: title
-	});
+	res.send('hi');
 });
-
-// Sign-in route
-
-// 
-
-//passport.use(new GoogleStrategy());
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
