@@ -1,6 +1,6 @@
 # **SoLuciole**
 
-## **Architecture de projet:**
+## **Project Architecture:**
 
 ### Server
   - client (redux + react)
